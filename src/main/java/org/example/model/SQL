@@ -1,0 +1,17 @@
+create database banhang2;
+use banhang2;
+create table sanpham(ma_san_pham int (11)  auto_increment , ten_san_pham varchar(255),
+so_luong int (20),
+primary key(ma_san_pham)
+);
+create table khachhang(ma_khach_hang int (11)  auto_increment , ten_khach_hang varchar(255),
+dia_chi varchar(255),
+primary key(ma_khach_hang)
+
+);
+create table donhang(ma_don int (11)  auto_increment , ma_khach_hang int (11),ma_san_pham int (20),
+
+primary key (ma_don),
+foreign key (ma_khach_hang) references khachhang(ma_khach_hang),
+foreign key (ma_san_pham) references sanpham(ma_san_pham)
+);
